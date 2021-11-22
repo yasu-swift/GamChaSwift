@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10F3FDC864C2E92D814DEADD /* Pods_GamCha_GamChaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402B7453F161B1FE2F408E79 /* Pods_GamCha_GamChaUITests.framework */; };
+		206C674FEBEA3D82C55C471E /* Pods_GamCha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4C6B45AD339729FBDF05D /* Pods_GamCha.framework */; };
+		D9356834274A1CAD00599AB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9356833274A1CAD00599AB7 /* Constants.swift */; };
+		D9356836274A3BF700599AB7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9356835274A3BF700599AB7 /* HomeViewController.swift */; };
+		D935683D274A475B00599AB7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D935683C274A475B00599AB7 /* LoginViewController.swift */; };
 		D9A96D272748ECE90082EB30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A96D262748ECE90082EB30 /* AppDelegate.swift */; };
 		D9A96D292748ECE90082EB30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A96D282748ECE90082EB30 /* SceneDelegate.swift */; };
 		D9A96D2B2748ECE90082EB30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A96D2A2748ECE90082EB30 /* ViewController.swift */; };
@@ -16,6 +21,9 @@
 		D9A96D3E2748ECEB0082EB30 /* GamChaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A96D3D2748ECEB0082EB30 /* GamChaTests.swift */; };
 		D9A96D482748ECEB0082EB30 /* GamChaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A96D472748ECEB0082EB30 /* GamChaUITests.swift */; };
 		D9A96D4A2748ECEB0082EB30 /* GamChaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A96D492748ECEB0082EB30 /* GamChaUITestsLaunchTests.swift */; };
+		D9C32B622748F5E70099BC90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9C32B612748F5E70099BC90 /* GoogleService-Info.plist */; };
+		D9C32B642749E3690099BC90 /* UIColor-Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C32B632749E3690099BC90 /* UIColor-Extention.swift */; };
+		E99678DE90765284E6CCA068 /* Pods_GamChaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BB4F2DFE857DEE43B0519C /* Pods_GamChaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1646EE7D57B4B73E9FC0993F /* Pods-GamCha-GamChaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamCha-GamChaUITests.debug.xcconfig"; path = "Target Support Files/Pods-GamCha-GamChaUITests/Pods-GamCha-GamChaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		23BB4F2DFE857DEE43B0519C /* Pods_GamChaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamChaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24F4C6B45AD339729FBDF05D /* Pods_GamCha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamCha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		402B7453F161B1FE2F408E79 /* Pods_GamCha_GamChaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamCha_GamChaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45C51BCE23C12CADFB056E7B /* Pods-GamCha-GamChaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamCha-GamChaUITests.release.xcconfig"; path = "Target Support Files/Pods-GamCha-GamChaUITests/Pods-GamCha-GamChaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		64E7C1F3505CB8B74C482CA8 /* Pods-GamChaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamChaTests.debug.xcconfig"; path = "Target Support Files/Pods-GamChaTests/Pods-GamChaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D018262D1E724E4BC41A287 /* Pods-GamChaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamChaTests.release.xcconfig"; path = "Target Support Files/Pods-GamChaTests/Pods-GamChaTests.release.xcconfig"; sourceTree = "<group>"; };
+		80F96ED6A3E8C18DFCA9AC79 /* Pods-GamCha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamCha.debug.xcconfig"; path = "Target Support Files/Pods-GamCha/Pods-GamCha.debug.xcconfig"; sourceTree = "<group>"; };
+		9B25E7A27F25CC7D0AD60E68 /* Pods-GamCha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamCha.release.xcconfig"; path = "Target Support Files/Pods-GamCha/Pods-GamCha.release.xcconfig"; sourceTree = "<group>"; };
+		D9356833274A1CAD00599AB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D9356835274A3BF700599AB7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D935683C274A475B00599AB7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D9A96D232748ECE90082EB30 /* GamCha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamCha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A96D262748ECE90082EB30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9A96D282748ECE90082EB30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +69,8 @@
 		D9A96D432748ECEB0082EB30 /* GamChaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamChaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A96D472748ECEB0082EB30 /* GamChaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamChaUITests.swift; sourceTree = "<group>"; };
 		D9A96D492748ECEB0082EB30 /* GamChaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamChaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D9C32B612748F5E70099BC90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D9C32B632749E3690099BC90 /* UIColor-Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206C674FEBEA3D82C55C471E /* Pods_GamCha.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99678DE90765284E6CCA068 /* Pods_GamChaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +94,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F3FDC864C2E92D814DEADD /* Pods_GamCha_GamChaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4425462606A7ECA9847F484 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80F96ED6A3E8C18DFCA9AC79 /* Pods-GamCha.debug.xcconfig */,
+				9B25E7A27F25CC7D0AD60E68 /* Pods-GamCha.release.xcconfig */,
+				1646EE7D57B4B73E9FC0993F /* Pods-GamCha-GamChaUITests.debug.xcconfig */,
+				45C51BCE23C12CADFB056E7B /* Pods-GamCha-GamChaUITests.release.xcconfig */,
+				64E7C1F3505CB8B74C482CA8 /* Pods-GamChaTests.debug.xcconfig */,
+				6D018262D1E724E4BC41A287 /* Pods-GamChaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D9A96D1A2748ECE90082EB30 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +121,8 @@
 				D9A96D3C2748ECEB0082EB30 /* GamChaTests */,
 				D9A96D462748ECEB0082EB30 /* GamChaUITests */,
 				D9A96D242748ECE90082EB30 /* Products */,
+				D4425462606A7ECA9847F484 /* Pods */,
+				DA6BC7BA0B25981A2F4239E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,10 +142,15 @@
 				D9A96D262748ECE90082EB30 /* AppDelegate.swift */,
 				D9A96D282748ECE90082EB30 /* SceneDelegate.swift */,
 				D9A96D2A2748ECE90082EB30 /* ViewController.swift */,
+				D935683C274A475B00599AB7 /* LoginViewController.swift */,
+				D9356835274A3BF700599AB7 /* HomeViewController.swift */,
 				D9A96D2C2748ECE90082EB30 /* Main.storyboard */,
+				D9C32B632749E3690099BC90 /* UIColor-Extention.swift */,
 				D9A96D2F2748ECEB0082EB30 /* Assets.xcassets */,
 				D9A96D312748ECEB0082EB30 /* LaunchScreen.storyboard */,
 				D9A96D342748ECEB0082EB30 /* Info.plist */,
+				D9C32B612748F5E70099BC90 /* GoogleService-Info.plist */,
+				D9356833274A1CAD00599AB7 /* Constants.swift */,
 			);
 			path = GamCha;
 			sourceTree = "<group>";
@@ -127,6 +172,16 @@
 			path = GamChaUITests;
 			sourceTree = "<group>";
 		};
+		DA6BC7BA0B25981A2F4239E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24F4C6B45AD339729FBDF05D /* Pods_GamCha.framework */,
+				402B7453F161B1FE2F408E79 /* Pods_GamCha_GamChaUITests.framework */,
+				23BB4F2DFE857DEE43B0519C /* Pods_GamChaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9A96D4D2748ECEB0082EB30 /* Build configuration list for PBXNativeTarget "GamCha" */;
 			buildPhases = (
+				5E240A6B13F58D1450238411 /* [CP] Check Pods Manifest.lock */,
 				D9A96D1F2748ECE90082EB30 /* Sources */,
 				D9A96D202748ECE90082EB30 /* Frameworks */,
 				D9A96D212748ECE90082EB30 /* Resources */,
+				2F120D56793AE0B01B190C24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9A96D502748ECEB0082EB30 /* Build configuration list for PBXNativeTarget "GamChaTests" */;
 			buildPhases = (
+				3A767FDF169F019406F2CCCA /* [CP] Check Pods Manifest.lock */,
 				D9A96D352748ECEB0082EB30 /* Sources */,
 				D9A96D362748ECEB0082EB30 /* Frameworks */,
 				D9A96D372748ECEB0082EB30 /* Resources */,
@@ -169,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9A96D532748ECEB0082EB30 /* Build configuration list for PBXNativeTarget "GamChaUITests" */;
 			buildPhases = (
+				DA8B57AF545E140C8996C571 /* [CP] Check Pods Manifest.lock */,
 				D9A96D3F2748ECEB0082EB30 /* Sources */,
 				D9A96D402748ECEB0082EB30 /* Frameworks */,
 				D9A96D412748ECEB0082EB30 /* Resources */,
+				8D5019672DA98724137DB102 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9A96D332748ECEB0082EB30 /* LaunchScreen.storyboard in Resources */,
+				D9C32B622748F5E70099BC90 /* GoogleService-Info.plist in Resources */,
 				D9A96D302748ECEB0082EB30 /* Assets.xcassets in Resources */,
 				D9A96D2E2748ECE90082EB30 /* Main.storyboard in Resources */,
 			);
@@ -253,14 +314,121 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2F120D56793AE0B01B190C24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GamCha/Pods-GamCha-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GamCha/Pods-GamCha-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GamCha/Pods-GamCha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A767FDF169F019406F2CCCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GamChaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E240A6B13F58D1450238411 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GamCha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D5019672DA98724137DB102 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GamCha-GamChaUITests/Pods-GamCha-GamChaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GamCha-GamChaUITests/Pods-GamCha-GamChaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GamCha-GamChaUITests/Pods-GamCha-GamChaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA8B57AF545E140C8996C571 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GamCha-GamChaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D9A96D1F2748ECE90082EB30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D935683D274A475B00599AB7 /* LoginViewController.swift in Sources */,
+				D9356834274A1CAD00599AB7 /* Constants.swift in Sources */,
 				D9A96D2B2748ECE90082EB30 /* ViewController.swift in Sources */,
 				D9A96D272748ECE90082EB30 /* AppDelegate.swift in Sources */,
+				D9C32B642749E3690099BC90 /* UIColor-Extention.swift in Sources */,
 				D9A96D292748ECE90082EB30 /* SceneDelegate.swift in Sources */,
+				D9356836274A3BF700599AB7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,11 +602,13 @@
 		};
 		D9A96D4E2748ECEB0082EB30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80F96ED6A3E8C18DFCA9AC79 /* Pods-GamCha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R9Z2GPHT97;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GamCha/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -461,11 +631,13 @@
 		};
 		D9A96D4F2748ECEB0082EB30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B25E7A27F25CC7D0AD60E68 /* Pods-GamCha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R9Z2GPHT97;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GamCha/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -488,6 +660,7 @@
 		};
 		D9A96D512748ECEB0082EB30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64E7C1F3505CB8B74C482CA8 /* Pods-GamChaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +685,7 @@
 		};
 		D9A96D522748ECEB0082EB30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D018262D1E724E4BC41A287 /* Pods-GamChaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +710,7 @@
 		};
 		D9A96D542748ECEB0082EB30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1646EE7D57B4B73E9FC0993F /* Pods-GamCha-GamChaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +733,7 @@
 		};
 		D9A96D552748ECEB0082EB30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45C51BCE23C12CADFB056E7B /* Pods-GamCha-GamChaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

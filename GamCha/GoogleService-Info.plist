@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>496886622697-2licap2r3uvib9ji9ko233v5c1ijckg9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.496886622697-2licap2r3uvib9ji9ko233v5c1ijckg9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCIO72AoQqZG2xLUrjVQPzBI_qWtwuOwEI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>496886622697</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.yasu.GamCha</string>
+	<key>PROJECT_ID</key>
+	<string>gamcha-17405</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gamcha-17405.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:496886622697:ios:537642c783f540277ac378</string>
+</dict>
+</plist>
