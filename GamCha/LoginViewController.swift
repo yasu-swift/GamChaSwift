@@ -12,8 +12,8 @@ import SwiftyJSON
 import KeychainAccess
 
 
-class LoginViewController: UIViewController {
-    let consts = Constants.shared  //Constantsに格納しておいた定数を使うための用意
+class LoginViewController: UIViewController, UITextFieldDelegate{
+    let consts = Constants.shared //Constantsに格納しておいた定数を使うための用意
     var token = ""
     var session: ASWebAuthenticationSession? //Webの認証セッションを入れておく変数
     //新規ログインボタン
@@ -26,53 +26,106 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(token)
         
-        
+        //        新規ログインボタン初期の状態
+//        loginButton.isEnabled = false
+//        loginButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
+//        loginButton.layer.cornerRadius = 10
+//
+//        emailTextField.delegate = self
+//        passwordTextField.delegate = self
+//
+//        NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
     //取得したcodeを使ってアクセストークンを発行
-    func getAccessToken(code: String!) {
-        let url = URL(string: consts.baseUrl + "/access_tokens")!
-        guard let code = code else { return }
+    func getAccessToken() {
+        let url = URL(string: consts.baseUrl + "/login")!
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
             "ACCEPT": "application/json"
         ]
         let parameters: Parameters = [
-            "client_id": consts.clientID,
-            "client_secret": consts.clientSecret,
-            "code": code
+            "email": emailTextField.text!,
+            "password": passwordTextField.text!
         ]
-        print("CODE: \n\(code)")
         //Alamofireでリクエスト
-//        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                let json = JSON(value)
-//                let token: String? = json["token"].string
-//                guard let accessToken = token else { return }
-//                self.token = accessToken
-//            case .failure(let err):
-//                print(err.localizedDescription)
-//            }
-//        }
-    }
-    
-    @IBAction func loginButton(_ sender: Any) {
-        let url = URL(string: consts.oAuthUrl + "?client_id=\(consts.clientID)&scope=\(consts.scopes)")!
-        session = ASWebAuthenticationSession(url: url, callbackURLScheme: consts.callbackUrlScheme) {(callback, error) in
-            guard error == nil, let successURL = callback else { return }
-            let queryItems = URLComponents(string: successURL.absoluteString)?.queryItems
-            guard let code = queryItems?.filter({ $0.name == "code" }).first?.value else { return } //codeの値だけを取り出す
-            self.getAccessToken(code: code)
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                let token: String? = json["token"].string
+                guard let accessToken = token else { return }
+                self.token = accessToken
+                let keychain = Keychain(service: self.consts.service) //このアプリ用のキーチェーンを生成
+                keychain["access_token"] = accessToken //キーを設定して保存
+                
+                self.transitionToTabBar() //画面遷移
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         }
-        session?.presentationContextProvider = self //デリゲートを設定
-        session?.prefersEphemeralWebBrowserSession = true //認証セッションと通常のブラウザで閲覧情報やCookieを共有しないように設定。
-        session?.start()  //セッションの開始(これがないと認証できない)
+    }
+    @IBAction func loginButton(_ sender: Any) {
+        let keychain = Keychain(service: consts.service)
+        if keychain["access_token"] != nil {
+            token = keychain["access_token"]!
+            print("プリント上")
+        } else {
+            let keychain = Keychain(service: consts.service)
+            if keychain["access_token"] != nil {
+                token = keychain["access_token"]!
+                print("プリント中")
+                print(token)
+                //            transitionToTabBar() //画面遷移
+            } else {
+                print("プリント下")
+                print(getAccessToken)
+                self.getAccessToken()
+            }
+        }
     }
     
+    func transitionToTabBar() {
+        let tabBarContorller = self.storyboard?.instantiateViewController(withIdentifier: "TabBarC") as! UITabBarController
+        tabBarContorller.modalPresentationStyle = .fullScreen
+        present(tabBarContorller, animated: true, completion: nil)
+    }
     
+    //    キーボードを下げる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //    キーボード下げる
+//    @objc func hideKeyboard() {
+//        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: {
+//            self.view.transform = .identity
+//        })
+//    }
+    
+    //    キーボードの位置修正
+    @objc func showKeyboard(notification: Notification) {
+        let keyboardFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
+        
+        guard let keyboardMinY = keyboardFrame?.minY else { return }
+        let registerButtonMaxY = loginButton.frame.maxY
+        let distance = registerButtonMaxY - keyboardMinY + 20
+        
+        let transform = CGAffineTransform(translationX: 0, y: -distance)
+        //        新規ログインボタンの色
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: {
+            self.view.transform = transform
+        })
+        
+        print("keyboardMinY : ", keyboardMinY, "registerButtonMaxY", registerButtonMaxY)
+    }
 }
+
+
+
 
 
 //これがあることでボタンを押した時にQiitaのログイン→認証の画面を開ける
