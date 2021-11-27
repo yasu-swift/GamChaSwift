@@ -8,7 +8,7 @@
 import Foundation
 
 struct Comments {
-    let name: String
+//    let name: String
     let user_id: Int
     let body: String
     let room_id: Int

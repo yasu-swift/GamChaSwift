@@ -11,6 +11,6 @@ import Foundation
 struct CommentPost {
     let body: String
     let room_id: Int
-    let name: String
+//    let name: String
     let user_id: Int
 }

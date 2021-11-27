@@ -33,8 +33,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
 //        loginButton.backgroundColor = UIColor.rgb(red: 255, green: 221, blue: 187)
 //        loginButton.layer.cornerRadius = 10
 //
-//        emailTextField.delegate = self
-//        passwordTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
 //
 //        NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -55,6 +55,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+                
                 print(json)
                 let token: String? = json["token"].string
                 guard let accessToken = token else { return }
@@ -73,13 +74,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         if keychain["access_token"] != nil {
             token = keychain["access_token"]!
             print("プリント上")
+            print(emailTextField.text)
+            print(passwordTextField.text)
         } else {
             let keychain = Keychain(service: consts.service)
             if keychain["access_token"] != nil {
                 token = keychain["access_token"]!
-                print("プリント中")
+                print("プリント正解！")
                 print(token)
-                //            transitionToTabBar() //画面遷移
+                            transitionToTabBar() //画面遷移
             } else {
                 print("プリント下")
                 print(getAccessToken)

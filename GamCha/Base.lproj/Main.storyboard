@@ -250,7 +250,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Yjd-ka-tND" kind="relationship" relationship="viewControllers" id="L4e-ol-QJt"/>
-                        <segue destination="Ztm-Ns-IWl" kind="relationship" relationship="viewControllers" id="67O-af-6lb"/>
+                        <segue destination="Ztm-Ns-IWl" kind="relationship" relationship="viewControllers" id="b1p-Sp-Dh5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xk3-8K-BuZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -353,7 +353,7 @@
         <!--Item-->
         <scene sceneID="Jmk-1w-rwT">
             <objects>
-                <viewController id="Ztm-Ns-IWl" customClass="ShowViewController" customModule="GamCha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowViewController" id="Ztm-Ns-IWl" customClass="ShowViewController" customModule="GamCha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MAR-9f-F3X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -381,15 +381,21 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="S8e-uq-vF5">
                                         <rect key="frame" x="90" y="0.0" width="304" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkj-VA-WBJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="80"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkj-VA-WBJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="147" height="80"/>
                                                 <color key="backgroundColor" red="0.92133218049999999" green="0.87761154860000001" blue="0.068317967729999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmQ-Qb-gJE">
+                                                <rect key="frame" x="157" y="0.0" width="102" height="80"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="詳細" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4O-Lo-aoq">
-                                                <rect key="frame" x="79.5" y="0.0" width="224.5" height="80"/>
+                                                <rect key="frame" x="269" y="0.0" width="35" height="80"/>
                                                 <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -487,6 +493,7 @@
                         <outlet property="roomShowTableView" destination="eYg-NI-PEC" id="JrY-S2-haj"/>
                         <outlet property="roomTitleLabel" destination="hkj-VA-WBJ" id="IML-yk-5Iv"/>
                         <outlet property="showBodyLabel" destination="b4O-Lo-aoq" id="Urn-Fk-xrl"/>
+                        <outlet property="userLimitLabel" destination="dmQ-Qb-gJE" id="v27-cj-JuI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQl-6d-0b8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -17,10 +17,12 @@ class ShowViewController: UIViewController {
     let consts = Constants.shared
     let okAlert = OkAlert()
     private var token = "" //アクセストークンを格納しておく変数
+    var roomID: Int = 0 //画面遷移直前に記事固有のIDを受け取るための変数。
     var comments: [Comments] = []
     var comment: [CommentPost] = []
     var room: [RoomShow] = []
     
+    @IBOutlet weak var userLimitLabel: UILabel!
     @IBOutlet weak var roomTitleLabel: UILabel!
     @IBOutlet weak var showBodyLabel: UILabel!
     @IBOutlet weak var roomShowTableView: UITableView!
@@ -35,22 +37,27 @@ class ShowViewController: UIViewController {
         self.token = token
         roomShowTableView.dataSource = self
         getCommentsApi()
-        getRoomApi()
+        getRoomApi(roomID: roomID)
+        //記事固有のIDを受け取っているかどうか。
+        if roomID == 0 {
+            return
+        } else {
+            getRoomApi(roomID: roomID)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getCommentsApi()
-        getRoomApi()
+        getRoomApi(roomID: roomID)
         print(token)
     }
     
-    
-    func getRoomApi() {
+    func getRoomApi(roomID: Int) {
 //        let keychain = Keychain(service: consts.service)
 //        guard let accessToken = keychain["access_token"] else { return print("no token") }
-        
-        let url = URL(string: consts.baseUrl + "/rooms/4")!
+        let roomIDString = String(roomID)
+        let url = URL(string: consts.baseUrl + "/rooms/" + roomIDString)!
         let headers:HTTPHeaders = [
             "content-type": "application/json",
             "Accept": "application/json"]
@@ -60,24 +67,21 @@ class ShowViewController: UIViewController {
                 //successの時
             case .success(let value):
                 self.room = []
-                //SwiftyJSONでDecode
-                let json = JSON(value).arrayValue //SwiftyJSONでデコード
+                //SwiftyJSONでDecode arrayの中に[room[comment]]になってるので.firstつけて、guardでnil審査
+                guard let json = JSON(value).arrayValue.first else { return } //SwiftyJSONでデコード
                 print(json)
-                
-                for room in json {
 
-                    let room = RoomShow(
-                        id: room["id"].int!,
-                        title: room["title"].string!,
-                        body: room["body"].string!,
-                        userLimit: room["userLimit"].int!
-                    )
-                    
-                    self.setRoomShow(room: room)
-                    
-                }
+                let room = Room(
+                    id: json["id"].int!,
+                    title: json["title"].string!,
+                    body: json["body"].string!,
+                    category_id: json["category_id"].int!,
+                    userLimit: json["userLimit"].int!,
+                    updated_at: json["updated_at"].string!
+                )
+                self.setRoomShow(room: room)
+
                 //failureの時
-//                self.reloadData()
             case .failure(let err):
                 print("\(err.localizedDescription)です")
             }
@@ -86,14 +90,12 @@ class ShowViewController: UIViewController {
     
     
     //User型オブジェクトに含まれる値を、それぞれ、LabelやImageViewに表示させるメソッド
-    func setRoomShow(room: RoomShow) {
+    func setRoomShow(room: Room) {
         //それぞれのLabelに表示
-        
+        let userLimitString = String(room.userLimit)
         roomTitleLabel.text = room.title
+        userLimitLabel.text = "上限:" + userLimitString
         showBodyLabel.text = room.body
-        print("タイトル\(roomTitleLabel.text)ですです")
-        print("詳細\(showBodyLabel.text)ですです")
-        
     }
     
     
@@ -102,7 +104,9 @@ class ShowViewController: UIViewController {
     
     //テーブルビューに表示するための物
     func getCommentsApi() {
-        let url = URL(string: consts.baseUrl + "/rooms/4/comments")!
+        let roomIDString = String(roomID)
+        let url = URL(string: consts.baseUrl + "/rooms/" + roomIDString + "/comments")!
+//        print("URL:\(url)")
         let headers:HTTPHeaders = [
             "content-type": "application/json",
             "Accept": "application/json"]
@@ -112,17 +116,17 @@ class ShowViewController: UIViewController {
                 //successの時
             case .success(let value):
                 self.comments = []
-                //SwiftyJSONでDecode
+                //SwiftyJSONでDecode arrayの中に[room[comment]]になってるので.firstつけて、guardでnil審査
                 let json = JSON(value).arrayValue //SwiftyJSONでデコード
-//                print(json)
+//                print("JSON:",json[0]["body"])
                 for comment in json {
                     let comment = Comments(
-                        name: comment["name"].string!,
+//                        name: comment["name"].string!,
                         user_id: comment["user_id"].int!,
                         body: comment["body"].string!,
                         room_id: comment["room_id"].int!
                     )
-//                    print(room)
+                    print("COMMENT:" , comment)
                     self.comments.append(comment)
                 }
                 //failureの時
@@ -139,7 +143,7 @@ class ShowViewController: UIViewController {
     @IBAction func shareButton(_ sender: Any) {
         // 共有する項目
         let shareText = "#急募です。本当に急募です！！"
-        let shareWebsite = NSURL(string: consts.baseUrl + "/rooms/4/comments")!
+        let shareWebsite = NSURL(string: consts.baseUrl + "/rooms/4")!
         let activityItems = [shareText, shareWebsite] as [Any]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
          // 使用しないアクティビティタイプ
@@ -164,13 +168,15 @@ class ShowViewController: UIViewController {
     
     
     func postRequest(comment: CommentPost) {
+        let roomIDString = String(roomID)
         //URL生成
-        let url = URL(string: "http://localhost/api/rooms/4/comments")!
+        let url = URL(string: consts.baseUrl + "/rooms/" + roomIDString + "/comments")!
+        print(url)
         // Qiita API V2に合わせたパラメータを設定
         let parameters: Parameters = [
             "body": comment.body,
             "room_id": comment.room_id,
-            "name": comment.name,
+//            "name": comment.name,
             "user_id": comment.user_id
         ]
         //ヘッダにアクセストークンを含める
@@ -182,7 +188,9 @@ class ShowViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 print(json)
-                print("たぶん送信できました")
+                print("送信できました")
+                self.commentTextField.text = ""
+                self.viewDidLoad()
                 //failure
             case .failure(let err):
                 print(parameters)
@@ -199,7 +207,7 @@ class ShowViewController: UIViewController {
             okAlert.showOkAlert(title: "空欄です", message: "入力して下さい。", viewController: self)
         }
         //PosiingArticle型のオブジェクトを生成して返す。
-        let comment = CommentPost(body: commentTextField.text!, room_id: 4, name: "田中さん", user_id: 5)
+        let comment = CommentPost(body: commentTextField.text!, room_id: 4, user_id: 5)
 //        print(comment)
         return comment
     }
@@ -228,7 +236,7 @@ extension ShowViewController: UITableViewDataSource {
         let labelName = cell.viewWithTag(1) as! UILabel
         let labelComment = cell.viewWithTag(2) as! UILabel
         //ラベルに表示する文字列を設定
-        labelName.text = comments[indexPath.row].name
+//        labelName.text = comments[indexPath.row].name
         labelComment.text = comments[indexPath.row].body
         
         return cell

@@ -17,10 +17,12 @@ class HomeViewController: UIViewController {
     let secitonTitles = ["部屋一覧:"] //セクションのタイトルとして使用
     let consts = Constants.shared
     var rooms: [Room] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         roomsTableView.dataSource = self
+        roomsTableView.delegate = self
         getRoomsApi()
         
     }
@@ -48,6 +50,7 @@ class HomeViewController: UIViewController {
 //                print(json)
                 for room in json {
                     let room = Room(
+                        id: room["id"].int!,
                         title: room["title"].string!,
                         body: room["body"].string!,
                         // joinUser: (room["joinUser"].int)!,
@@ -106,5 +109,23 @@ extension HomeViewController: UITableViewDataSource {
     //セクションのタイトルを設定
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return secitonTitles[section]
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //編集・削除画面を生成
+        
+        let showVC = self.storyboard?.instantiateViewController(withIdentifier: "ShowViewController") as! ShowViewController
+//        print("あああああああああああああああああああああああああああ")
+//        print(rooms[indexPath.row].id)
+
+        //選択された記事の固有のIDを編集・削除画面の変数に渡す
+        showVC.roomID = rooms[indexPath.row].id
+        
+//        print(showVC.roomID)
+        showVC.modalPresentationStyle = .fullScreen
+        //編集・削除画面を表示!
+        present(showVC, animated: true, completion: nil)
     }
 }
