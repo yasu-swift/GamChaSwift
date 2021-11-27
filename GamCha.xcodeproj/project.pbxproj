@@ -14,6 +14,7 @@
 		D935683D274A475B00599AB7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D935683C274A475B00599AB7 /* LoginViewController.swift */; };
 		D9356841274B55BD00599AB7 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9356840274B55BD00599AB7 /* Room.swift */; };
 		D9356843274CF31D00599AB7 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9356842274CF31D00599AB7 /* ShowViewController.swift */; };
+		D98DD02C27522D19007D5795 /* RoomCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98DD02B27522D19007D5795 /* RoomCreate.swift */; };
 		D9A96D272748ECE90082EB30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A96D262748ECE90082EB30 /* AppDelegate.swift */; };
 		D9A96D292748ECE90082EB30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A96D282748ECE90082EB30 /* SceneDelegate.swift */; };
 		D9A96D2B2748ECE90082EB30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A96D2A2748ECE90082EB30 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		D9F1C2A6274DDFA1008B9199 /* OkAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F1C2A5274DDFA1008B9199 /* OkAlert.swift */; };
 		D9F1C2AA274DE155008B9199 /* CommentPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F1C2A9274DE155008B9199 /* CommentPost.swift */; };
 		D9F1C2AC274DF858008B9199 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F1C2AB274DF858008B9199 /* Comments.swift */; };
+		D9F8582F275225E800EB46D0 /* RoomCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8582E275225E800EB46D0 /* RoomCreateViewController.swift */; };
 		E99678DE90765284E6CCA068 /* Pods_GamChaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BB4F2DFE857DEE43B0519C /* Pods_GamChaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,7 @@
 		D935683C274A475B00599AB7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D9356840274B55BD00599AB7 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		D9356842274CF31D00599AB7 /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		D98DD02B27522D19007D5795 /* RoomCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreate.swift; sourceTree = "<group>"; };
 		D9A96D232748ECE90082EB30 /* GamCha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamCha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9A96D262748ECE90082EB30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9A96D282748ECE90082EB30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		D9F1C2A5274DDFA1008B9199 /* OkAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkAlert.swift; sourceTree = "<group>"; };
 		D9F1C2A9274DE155008B9199 /* CommentPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPost.swift; sourceTree = "<group>"; };
 		D9F1C2AB274DF858008B9199 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		D9F8582E275225E800EB46D0 /* RoomCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 				D9A96D2A2748ECE90082EB30 /* ViewController.swift */,
 				D935683C274A475B00599AB7 /* LoginViewController.swift */,
 				D9356835274A3BF700599AB7 /* HomeViewController.swift */,
+				D9F8582E275225E800EB46D0 /* RoomCreateViewController.swift */,
 				D9356842274CF31D00599AB7 /* ShowViewController.swift */,
 				D9A96D2C2748ECE90082EB30 /* Main.storyboard */,
 				D9C32B632749E3690099BC90 /* UIColor-Extention.swift */,
@@ -167,6 +172,7 @@
 				D9F1C2AB274DF858008B9199 /* Comments.swift */,
 				D9F1C2A5274DDFA1008B9199 /* OkAlert.swift */,
 				D9356833274A1CAD00599AB7 /* Constants.swift */,
+				D98DD02B27522D19007D5795 /* RoomCreate.swift */,
 				D9356840274B55BD00599AB7 /* Room.swift */,
 				D9F1C2A3274DD4D2008B9199 /* RoomShow.swift */,
 			);
@@ -451,6 +457,8 @@
 				D9356843274CF31D00599AB7 /* ShowViewController.swift in Sources */,
 				D9C32B642749E3690099BC90 /* UIColor-Extention.swift in Sources */,
 				D9F1C2A4274DD4D2008B9199 /* RoomShow.swift in Sources */,
+				D9F8582F275225E800EB46D0 /* RoomCreateViewController.swift in Sources */,
+				D98DD02C27522D19007D5795 /* RoomCreate.swift in Sources */,
 				D9A96D292748ECE90082EB30 /* SceneDelegate.swift in Sources */,
 				D9356836274A3BF700599AB7 /* HomeViewController.swift in Sources */,
 			);

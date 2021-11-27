@@ -69,10 +69,11 @@ class ShowViewController: UIViewController {
                 self.room = []
                 //SwiftyJSONでDecode arrayの中に[room[comment]]になってるので.firstつけて、guardでnil審査
                 guard let json = JSON(value).arrayValue.first else { return } //SwiftyJSONでデコード
-                print(json)
-
+//                print("ROOM:", json)
+//                print("NAME:",json)
                 let room = Room(
                     id: json["id"].int!,
+                    name: json["user"]["name"].string!,
                     title: json["title"].string!,
                     body: json["body"].string!,
                     category_id: json["category_id"].int!,
@@ -80,7 +81,7 @@ class ShowViewController: UIViewController {
                     updated_at: json["updated_at"].string!
                 )
                 self.setRoomShow(room: room)
-
+//                print(room)
                 //failureの時
             case .failure(let err):
                 print("\(err.localizedDescription)です")
@@ -118,15 +119,16 @@ class ShowViewController: UIViewController {
                 self.comments = []
                 //SwiftyJSONでDecode arrayの中に[room[comment]]になってるので.firstつけて、guardでnil審査
                 let json = JSON(value).arrayValue //SwiftyJSONでデコード
-//                print("JSON:",json[0]["body"])
+//                print("NAME:",json[1])
+//                print("COMMENT:", json)
                 for comment in json {
                     let comment = Comments(
-//                        name: comment["name"].string!,
+                        name: comment["user"]["name"].string!,
                         user_id: comment["user_id"].int!,
                         body: comment["body"].string!,
                         room_id: comment["room_id"].int!
                     )
-                    print("COMMENT:" , comment)
+//                    print("COMMENT:" , comment)
                     self.comments.append(comment)
                 }
                 //failureの時
@@ -138,6 +140,9 @@ class ShowViewController: UIViewController {
     }
     
     
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil) //追加
+    }
     
     
     @IBAction func shareButton(_ sender: Any) {
@@ -238,7 +243,7 @@ extension ShowViewController: UITableViewDataSource {
         //ラベルに表示する文字列を設定
 //        labelName.text = comments[indexPath.row].name
         labelComment.text = comments[indexPath.row].body
-        
+        labelName.text = comments[indexPath.row].name
         return cell
     }
     //セクションの数はセクションのタイトルの数

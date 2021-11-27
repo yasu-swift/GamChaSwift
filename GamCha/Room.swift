@@ -8,6 +8,7 @@
 import Foundation
 struct Room {
     let id: Int
+    let name: String
     let title: String
     let body: String
 //    let joinUser: Int

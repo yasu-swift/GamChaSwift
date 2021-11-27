@@ -47,10 +47,11 @@ class HomeViewController: UIViewController {
                 self.rooms = []
                 //SwiftyJSONでDecode
                 let json = JSON(value).arrayValue //SwiftyJSONでデコード
-//                print(json)
+//                print("NAME:",json)
                 for room in json {
                     let room = Room(
                         id: room["id"].int!,
+                        name: room["user"]["name"].string!,
                         title: room["title"].string!,
                         body: room["body"].string!,
                         // joinUser: (room["joinUser"].int)!,
