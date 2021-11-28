@@ -45,6 +45,7 @@ class RoomCreateViewController: UIViewController {
     @IBAction func roomCreateButton(_ sender: Any) {
         let room = createRoom()
         roomCreateRequest(roomCreate: room)
+        
 //        print(comment)
     }
 
@@ -74,6 +75,9 @@ class RoomCreateViewController: UIViewController {
                 print("送信できました")
 //                self.commentTextField.text = ""
                 self.viewDidLoad()
+                self.roomBodyTextField.text = ""
+                self.roomTitleTextField.text = ""
+                self.roomPasswordTextField.text = ""
                 //failure
             case .failure(let err):
                 print(parameters)

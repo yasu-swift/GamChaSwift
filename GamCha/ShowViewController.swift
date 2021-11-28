@@ -148,7 +148,9 @@ class ShowViewController: UIViewController {
     @IBAction func shareButton(_ sender: Any) {
         // 共有する項目
         let shareText = "#急募です。本当に急募です！！"
-        let shareWebsite = NSURL(string: consts.baseUrl + "/rooms/4")!
+        let roomIDString = String(roomID)
+        let shareWebsite = URL(string: "http://localhost/rooms/" + roomIDString)!
+//        let shareWebsite = NSURL(string: consts.baseUrl + "/rooms/4")!
         let activityItems = [shareText, shareWebsite] as [Any]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
          // 使用しないアクティビティタイプ
